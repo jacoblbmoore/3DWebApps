@@ -1,7 +1,27 @@
 body,
 html {
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
 }
+
+.dark-mode {
+  background-color: black;
+}
+
+.dark-mode .common-bg {
+    background-image: url('assets/images/home-dark.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.history-text {
+  color: gray;
+}
+
+.body-dark .history-text {
+  color: white;
+}
+
 
 .bg-gradient-primary-to-secondary {
   background: linear-gradient(135deg, #371f76 0%, #e21 100%);
@@ -171,6 +191,15 @@ html {
     color: #666666;
   }
   
+  .media-link-container {
+    margin-right: 30px;
+  }
+
+  @media (max-width: 992px) {
+    .media-link-container {
+      margin-right: 0px;
+    }
+  }
 
   #contactModal {
     top: 10%;
@@ -231,6 +260,11 @@ html {
   text-shadow: -1px -1px 0 #777, -2px -2px 0 #777, -3px -3px 0 #777, -4px -4px 0 #777;
 }
 
+.dark-mode .carousel-body {
+  background-color: rgb(26,26,26);
+  color: white;
+}
+
 
 .btn-responsive {
     margin: 5px;
@@ -266,6 +300,14 @@ html {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 200;
   font-size: 16px;
+}
+
+.dark-mode .navbar-custom {
+  background-color: rgb(26, 26, 26);
+}
+
+.dark-mode .nav-link, .dark-mode .footer-text {
+  color: white;
 }
 
 .navbar-nav {
@@ -401,6 +443,10 @@ html {
   background-color:#e2dfeb ;
  }
 
+ .dark-mode .custom-wide-card {
+  background-color: rgb(26,26,26);
+ }
+
  .custom-read-btn {
   margin-bottom: 10px;
  }
@@ -431,6 +477,14 @@ html {
 }
 
 
+.dark-mode .card-titles {
+  color: white;
+}
+
+.dark-mode .stacker, .dark-mode .three-models {
+  background-color: rgb(26,26,26);
+}
+
 
 
 .stacker {
@@ -453,6 +507,7 @@ html {
   border: none;
 }
 
+
 .stacker h1 {
   transform: skewY(-15deg);
 }
@@ -471,6 +526,13 @@ html {
   padding: 15px;
   z-index: var(--i);
   transition: 0.5s;
+}
+
+@media (max-width: 575px) {
+  .stacker ul li {
+    width: 100px;
+    padding: 5px;
+  }
 }
 
 .stacker ul li:hover{
@@ -733,10 +795,34 @@ html {
   margin-left: 50;
 }
 
-.models-stack {
-  margin-right: 50px;
-}
 
+@media (max-width: 1000px) {
+  .row .col-lg-3.col-md-4.col-sm-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .row .col-lg-6.col-md-8.col-sm-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .row .col-lg-3.col-md-12.col-sm-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .stacker ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .stacker ul li {
+    margin: 0 5px;
+  }
+}
 
 
 

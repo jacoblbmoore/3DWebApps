@@ -31,9 +31,7 @@ export function createCoke(containerId) {
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer();
-  scene.background = new THREE.Color(0xe2 / 255, 0xdf / 255, 0xeb / 255);
-
+  const renderer = new THREE.WebGLRenderer({ alpha: true });
   renderer.setSize(width, height);
   renderer.outputEncoding = THREE.sRGBEncoding;
   renderer.toneMapping = THREE.LinearToneMapping;
@@ -73,21 +71,14 @@ export function createCoke(containerId) {
     if (mouseDown) {
       var deltaX = event.clientX - lastMousePosition.x;
       var deltaY = event.clientY - lastMousePosition.y;
-  
       var horizontalRotation = deltaX * 0.005;
       var verticalRotation = deltaY * 0.005;
-  
       model.rotation.y += horizontalRotation;
       model.rotation.x += verticalRotation;
-  
-     
       var angle = Math.atan2(deltaY, deltaX);
-  
-
       if (Math.abs(angle) > 0.25 * Math.PI && Math.abs(angle) < 0.75 * Math.PI) {
         model.rotation.z -= horizontalRotation; 
       }
-  
       lastMousePosition.x = event.clientX;
       lastMousePosition.y = event.clientY;
     }
@@ -95,26 +86,12 @@ export function createCoke(containerId) {
   
   function onWheelScroll(event) {
     event.preventDefault(); 
-  
     const zoomSpeed = 0.001;
     const scrollDirection = event.deltaY * zoomSpeed;
-  
-
     camera.position.addScaledVector(camera.getWorldDirection(new THREE.Vector3()), scrollDirection);
-  
-
     camera.updateProjectionMatrix();
   }
   
-
-
-
-
-
-
-
-
-
   const loader = new GLTFLoader();
   loader.load('assets/models/coke_can2.glb', (gltf) => {
     model = gltf.scene;
@@ -159,7 +136,8 @@ export function createCoke(containerId) {
       }
     }
 
-    $(document).on("click", "#texture-list li", function () {
+    $(document).on("click", "#texture-list li", function (event) {
+      event.preventDefault();
       const selectedOption = $(this).attr("id");
       switch (selectedOption) {
         case "coke":
@@ -175,18 +153,6 @@ export function createCoke(containerId) {
           break;
       }
     });
-
-
-
-
-
-
-
-
-
-
-
-
   
     if (wireframe) {
       setWireframe(wireframe);
@@ -208,9 +174,7 @@ export function createCoke(containerId) {
     scene.add(light);
   }
 
-
 const headLight = new THREE.PointLight(0xffffff, 1);
-
 
 camera.add(headLight);
 headLight.position.set(0, 0, 0);
@@ -244,7 +208,6 @@ headLight.position.set(0, 0, 0);
       }
     }
   
-
     renderer.render(scene, camera);
   }
   
@@ -321,31 +284,6 @@ return {
 
   };
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 export function createCoffee(containerId) {
@@ -590,15 +528,6 @@ return {
   };
 }
 
-
-
-
-
-
-
-
-
-
 export function createSprite(containerId) {
   let model;
   let spin = false;
@@ -751,7 +680,8 @@ export function createSprite(containerId) {
       }
     }
 
-    $(document).on("click", "#texture-list li", function () {
+    $(document).on("click", "#texture-list li", function (event) {
+      event.preventDefault();
       const selectedOption = $(this).attr("id");
       switch (selectedOption) {
         case "sprite":
@@ -764,10 +694,6 @@ export function createSprite(containerId) {
           break;
       }
     });
-
-
-
-
 
     if (wireframe) {
       setWireframe(wireframe);

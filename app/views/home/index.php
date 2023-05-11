@@ -73,7 +73,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item" style="margin-right: 30px;">
+                <li class="nav-item media-link-container">
                     <a class="nav-link" href="#" id="media-link">
                         <div class="d-flex flex-column align-items-center">
                             <i class="bi bi-camera2"></i>
@@ -85,11 +85,12 @@
                 <li class="nav-item" >
                     <a class="nav-link" href="#" id="dark-mode-link">
                         <div class="d-flex flex-column align-items-center">
-                            <i class="bi bi-moon"></i>
-                            Dark Mode
+                            <i id="dark-mode-icon" class="bi bi-sun"></i>
+                            <span>Dark Mode</span>
                         </div>
                     </a>
                 </li>
+
             </ul>
         </div>
     </div>
@@ -122,7 +123,7 @@
             <div class="container px-5">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto">
-                      <div class="small m-0">Copyright &copy; 2023 Mobile Web 3D Applictions</div>
+                      <div class="small m-0 footer-text">Copyright &copy; 2023 Mobile Web 3D Applictions</div>
                     </div>
                     <div class="col-auto">
                         <a class="small" href="#!">Privacy</a>
@@ -156,8 +157,8 @@
         <script src="js/jquery-3.6.4.js"></script>
         <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
         <script src="js/bootstrap.js"></script>
-        <script src="js/getJsonData.js"></script>
         <script src="js/main.js" type="module"></script>
+        <script src="js/getJsonData.js"></script>
         <script src="js/models.js" type="module"></script>
         <script src="js/fetch_images.js"></script>
     </body>

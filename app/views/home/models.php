@@ -1,17 +1,20 @@
-<div class="card text-center overflow-hidden border-0 mb-5 mt-5 custom-wide-card">
+<!-- Project Card 1-->
+<div class="card text-center overflow-hidden shadow rounded-4 border-0 mb-5 mt-5 custom-wide-card">
     <div class="card-body p-0 h-100">
         <div class="card-inner align-items-center">
 
             <div class="p-4">
-                <h2 class="fw-bolder">3D Model Controls</h2>
+                <h2 class="fw-bolder card-titles">3D Model Controls</h2>
             </div>
 
             <div class="container">
                 <div class="row">
                      
+                <!-- First column: Buttons -->
                      <div class="col-lg-3 col-md-4 col-sm-6">
                         <div class="row d-flex justify-content-center h-100">
 
+                            <!-- First card: Choose Model -->
                             <div class="col-12 mb-3">
                                 <div class="card p-3 stacker h-100 models-stack">
                                     <h1 style="color: red">Choose Model</h1>
@@ -47,12 +50,15 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-md-8 col-sm-12">
+                    <!-- Middle column: Model Container -->
+                    <div class="col-lg-6 col-md-8 col-sm-12 three-models">
                         <div class="p-10">
                             <div id="model-container-1" class="img-fluid" style="width: 70vw; height: 70vh;"></div>
                         </div>
                     </div>
 
+                    <!-- Right column: Buttons -->
+                    <div class="col-lg-3 col-md-12 col-sm-6">
                         <div class="row d-flex justify-content-center h-100">
 
                             <div class="col-12 mb-3">
@@ -86,34 +92,22 @@
                                     </ul>
                                 </div>
                             </div>
-
-                        
-
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-    </div>
-</div>
-
-
-
-
-                
-                
-
-
-
-            </div>
+          </div>
         </div>
     </div>
 </section>
 
+<!-- Project Card 2-->
 <div class="card text-center overflow-hidden shadow rounded-4 mb-5 border-0 custom-wide-card">
                     <div class="card-body p-0" style="user-select: none;">
                         <div class="align-items-center">
                             <div class="p-5">
-                                <h2>3D Image Gallery</h2>
-                                <h6 style="margin-bottom: 200px;">click and swipe to reveal...</h6>
+                                <h2 class="card-titles">3D Image Gallery</h2>
+                                <h5 class="card-titles" style="margin-bottom: 200px;">click and swipe to reveal...</h5>
 
                                 <div class="carousel-body">
                                     <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
@@ -123,6 +117,7 @@
                         </div>
                     </div>
                 </div>
+            <!-- Call to action section-->
 <section class="py-5 bg-gradient-primary-to-secondary text-white">
     <div class="container px-5 my-5">
         <div class="text-center models-footer">

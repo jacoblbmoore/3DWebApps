@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  setTimeout(function() {
   $.ajax({
     url: "get_json_data.php",
     method: "GET",
@@ -23,12 +24,12 @@ $(document).ready(function () {
       });
 
       var learnHTML = `
-      <div class="container px-5">
+      <div class="container px-5 history-container">
                     <div class="row gx-5 justify-content-center">
                         <div class="col-xxl-8">
                             <div class="text-center my-5">
                                 <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">${data.learnSection.title}</span></h2>
-                                <p class="text-muted">${data.learnSection.text}</p>
+                                <p class="history-text">${data.learnSection.text}</p>
                                 <div class="d-flex justify-content-center align-items-center fs-2">
                                   <a href="${data.learnSection.btnUrl}" class="btn custom-read-btn">
                                   <i class="bi bi-chevron-right"></i>${data.learnSection.btnText}
@@ -44,15 +45,11 @@ $(document).ready(function () {
                     </div>
                 </div>`;
       $("#learn-section").append(learnHTML);
-
-      var galleryTextHTML = `
-      <h1>${data.gallerySection.howToTitle}</h1>
-      <p style="margin: 0 100px;">${data.gallerySection.howToText}</p>`;
-      $(".text-section").append(galleryTextHTML);
     },
     error: function (jqXHR, textStatus, errorThrown) {
       console.error("Error fetching data:", errorThrown, jqXHR, textStatus);
     },
     
-  });
+  }, 3000);
+  })
 });
